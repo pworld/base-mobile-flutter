@@ -105,12 +105,12 @@ class LoginScreen extends HookConsumerWidget {
           padding: AppStyle.formPadding,
           child: ListView(
             children: <Widget>[
-              // app Management System - Driver App Texts
+              // App Management System - Driver App Texts
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 40),
                 child: Column(
                   children: <Widget>[
-                    Text("app Management System", style: AppText.heading1),
+                    Text("App Management System", style: AppText.heading1),
                     Text("Driver App", style: AppText.bodyText),
                   ],
                 ),
