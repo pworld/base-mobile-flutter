@@ -77,7 +77,7 @@ class LoginScreen extends ConsumerWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         body: Container(
-          decoration: BoxDecoration(color: color.surfaceVariant),
+          decoration: BoxDecoration(color: color.surfaceContainerHighest),
           child: SafeArea(
             child: FormBuilder(
               key: form,

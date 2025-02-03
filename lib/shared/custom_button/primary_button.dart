@@ -29,7 +29,7 @@ class PrimaryButton extends StatelessWidget {
 
     return Material(
       color: disabled
-          ? theme.colorScheme.surfaceVariant
+          ? theme.colorScheme.surfaceContainerHighest
           : theme.colorScheme.primary,
       borderRadius: const BorderRadius.all(
         Radius.circular(10),
@@ -50,7 +50,7 @@ class PrimaryButton extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: disabled
-                  ? theme.colorScheme.onBackground
+                  ? theme.colorScheme.onSurface
                   : theme.colorScheme.inversePrimary,
             ),
           ),

@@ -1,7 +1,6 @@
 import 'package:app_management_system/theme/app_color.dart';
 import 'package:app_management_system/theme/app_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
 class LogoutConfirmationDialog extends StatelessWidget {
   const LogoutConfirmationDialog({
@@ -25,7 +24,8 @@ class LogoutConfirmationDialog extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(  // Use Expanded here to make sure the text fits within the row
+                Expanded(
+                  // Use Expanded here to make sure the text fits within the row
                   child: Text(
                     "APAKAH ANDA YAKIN INGIN KELUAR?",
                     style: AppText.textField,
@@ -71,12 +71,12 @@ class LogoutConfirmationDialog extends StatelessWidget {
   }
 
   Widget _buildActionButton(
-      BuildContext context, {
-        required String label,
-        VoidCallback? onTap,
-        required Color color,
-        required Color textColor,
-      }) {
+    BuildContext context, {
+    required String label,
+    VoidCallback? onTap,
+    required Color color,
+    required Color textColor,
+  }) {
     return Expanded(
       child: ElevatedButton(
         onPressed: onTap,

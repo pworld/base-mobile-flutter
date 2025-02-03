@@ -12,7 +12,6 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../locale/app_localization.dart';
-import '../../../../shared/custom_button/single_color_button.dart';
 import '../../domain/model/loginOTP_model.dart';
 import '../../domain/model/login_model.dart';
 import '../states/login_provider.dart';

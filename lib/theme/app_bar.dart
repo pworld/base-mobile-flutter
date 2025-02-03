@@ -5,26 +5,34 @@ import 'app_text.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
-  CustomAppBar(this.title);
+  const CustomAppBar(this.title, {super.key});
 
   @override
   Widget build(BuildContext context) {
     final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final Color backgroundColor = isDarkMode ? Theme.of(context).colorScheme.primary : Theme.of(context).primaryColor;
+    final Color backgroundColor = isDarkMode
+        ? Theme.of(context).colorScheme.primary
+        : Theme.of(context).primaryColor;
 
     return AppBar(
       backgroundColor: backgroundColor, // Dynamically set based on theme
       elevation: 10,
       shadowColor: Colors.black45,
-      title: Text(title, style: AppText.heading1.copyWith(color: Theme.of(context).colorScheme.onPrimary)), // Text color based on theme
+      title: Text(title,
+          style: AppText.heading1.copyWith(
+              color: Theme.of(context)
+                  .colorScheme
+                  .onPrimary)), // Text color based on theme
       centerTitle: true,
       leading: IconButton(
-        icon: Icon(Icons.arrow_back, color: Theme.of(context).colorScheme.onPrimary),
+        icon: Icon(Icons.arrow_back,
+            color: Theme.of(context).colorScheme.onPrimary),
         onPressed: () => Navigator.of(context).pop(),
       ),
       actions: [
         IconButton(
-          icon: Icon(Icons.settings, color: Theme.of(context).colorScheme.onPrimary),
+          icon: Icon(Icons.settings,
+              color: Theme.of(context).colorScheme.onPrimary),
           onPressed: () {
             // handle settings action
           },
@@ -33,9 +41,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10)
-          )
-      ),
+              bottomRight: Radius.circular(10))),
     );
   }
 

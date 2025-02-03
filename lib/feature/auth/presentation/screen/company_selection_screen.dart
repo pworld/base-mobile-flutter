@@ -1,4 +1,3 @@
-import 'package:app_management_system/core/authentication/auth_provider.dart';
 import 'package:app_management_system/feature/auth/domain/model/company_list_response_model.dart';
 import 'package:app_management_system/feature/auth/domain/model/company_selection_payload_model.dart';
 import 'package:app_management_system/feature/auth/presentation/provider/auth_provider.dart';
@@ -11,7 +10,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class CompanySelectionScreen extends ConsumerStatefulWidget {
-  CompanySelectionScreen({super.key});
+  const CompanySelectionScreen({super.key});
 
   @override
   ConsumerState<CompanySelectionScreen> createState() =>
@@ -48,7 +47,8 @@ class CompanySelectionScreenState
 
   Future<void> onSelect(CompanyListResponseModel tenant) async {
     final companyListNotifier = ref.read(companyListViewProvider.notifier);
-    final authCompanyLoginNotifier = ref.read(authCompanyLoginProvider.notifier);
+    final authCompanyLoginNotifier =
+        ref.read(authCompanyLoginProvider.notifier);
     final authCompanyLogin = ref.read(authCompanyLoginProvider);
     final authLoginNotifier = ref.read(authLoginProvider.notifier);
     final authLogin = ref.read(authLoginProvider);
@@ -63,16 +63,17 @@ class CompanySelectionScreenState
     await authCompanyLoginNotifier.selectCompany(payload);
 
     companyListNotifier.setState(loading: false);
-    
+
     Future.delayed(const Duration(milliseconds: 100), () async {
       if (authCompanyLogin.response.data != null) {
-        await authLoginNotifier.saveToken(authCompanyLogin.response.data!, true);
+        await authLoginNotifier.saveToken(
+            authCompanyLogin.response.data!, true);
         Future.delayed(const Duration(milliseconds: 100), () {
           context.replace('/orders');
         });
-      }
-      else {
-        showSnackbar(context, 'Gagal memilih perusahaan: ${authCompanyLogin.response.errorMessage}');
+      } else {
+        showSnackbar(context,
+            'Gagal memilih perusahaan: ${authCompanyLogin.response.errorMessage}');
       }
     });
   }

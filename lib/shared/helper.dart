@@ -91,7 +91,7 @@ List<String> getTextAfterPipe(String text) {
   // Split the string by the pipe character
   List<String> parts = text.split('|');
 
-  print("$text");
+  print(text);
 
   // Check if the split operation found any '|' and thus split into at least two parts
   if (parts.length > 1) {
@@ -129,8 +129,6 @@ String convertTimeZone(DateTime utcTime, String timetext) {
 }
 // End Timezone Offset
 
-
-
 // Timezone Offset
 (String, String) formatTimezone(DateTime utcTime, String timetext) {
   // Initialize timezone data
@@ -149,7 +147,10 @@ String convertTimeZone(DateTime utcTime, String timetext) {
   var formatterTime = DateFormat("HH:mm");
   var local = convertedTime.toLocal();
 
-  return (formatterDate.format(local), '${formatterTime.format(local)} ${timezoneAbbr.isEmpty ? '' : timezoneAbbr[1]}');
+  return (
+    formatterDate.format(local),
+    '${formatterTime.format(local)} ${timezoneAbbr.isEmpty ? '' : timezoneAbbr[1]}'
+  );
 }
 // End Timezone Offset
 

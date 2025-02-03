@@ -11,7 +11,7 @@ mixin LoadingOverlay {
       return Align(
         alignment: Alignment.center,
         child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.background),
+          valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.surface),
         ),
       );
     }));

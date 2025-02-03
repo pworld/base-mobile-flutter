@@ -461,7 +461,7 @@ class OrderTransferVehicleDetailState
             ],
             actionsIconTheme: const IconThemeData(color: Colors.black),
           ),
-          backgroundColor: theme.colorScheme.surfaceVariant,
+          backgroundColor: theme.colorScheme.surfaceContainerHighest,
           body: order == null
               ? const Center(child: CircularProgressIndicator())
               : SafeArea(

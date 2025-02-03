@@ -62,19 +62,19 @@ class OrderListScreenState extends ConsumerState<OrderListScreen> {
             fontSize: 24,
           ),
         ),
-        backgroundColor: color.surfaceVariant,
+        backgroundColor: color.surfaceContainerHighest,
       ),
       body: SafeArea(
         child: orderList.response.data == null
             ? Container(
                 decoration: BoxDecoration(
-                  color: color.surfaceVariant,
+                  color: color.surfaceContainerHighest,
                 ),
                 child: const Center(child: CircularProgressIndicator()),
               )
             : Container(
                 decoration: BoxDecoration(
-                  color: color.surfaceVariant,
+                  color: color.surfaceContainerHighest,
                 ),
                 child: LayoutBuilder(
                   builder: (context, constraints) {

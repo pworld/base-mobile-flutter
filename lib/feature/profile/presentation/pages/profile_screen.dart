@@ -151,11 +151,11 @@ class ProfileScreen extends HookConsumerWidget with LoadingOverlay {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    '${data.firstName ?? 'N/A'}',
+                                    data.firstName ?? 'N/A',
                                     style: AppText.heading5,
                                   ),
                                   Text(
-                                    '${data.phoneNumber ?? 'N/A'}',
+                                    data.phoneNumber ?? 'N/A',
                                     style: AppText.textField,
                                   )
                                 ],
@@ -236,7 +236,7 @@ class ProfileScreen extends HookConsumerWidget with LoadingOverlay {
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
-                                  '${data.firstName ?? 'N/A'}',
+                                  data.firstName ?? 'N/A',
                                 ),
                               )),
                           Text(
@@ -258,7 +258,7 @@ class ProfileScreen extends HookConsumerWidget with LoadingOverlay {
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
-                                  '${data.lastName ?? 'N/A'}',
+                                  data.lastName ?? 'N/A',
                                 ),
                               )),
                           Text(
@@ -317,7 +317,7 @@ class ProfileScreen extends HookConsumerWidget with LoadingOverlay {
                               ),
                               child: Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text('${data.email ?? 'N/A'}'),
+                                child: Text(data.email ?? 'N/A'),
                               )),
                         ]),
                   ),
