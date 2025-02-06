@@ -34,23 +34,22 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = null;
+    const navigator.serviceWorker.register('flutter_service_worker.js?v={{flutter_service_worker_version}}');
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 <body>
   <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
+    window.addEventListener('load', function (ev) {
+      // Replace FlutterLoader.loadEntrypoint with FlutterLoader.load
+      FlutterLoader.load({
+        // Optional: Specify the entrypoint (defaults to "main.dart.js")
+        entrypoint: "main.dart.js",
+        // Optional: Service worker configuration
         serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
+          serviceWorkerVersion: '{{flutter_service_worker_version}}', // Use template token
+          serviceWorkerUrl: 'flutter_service_worker.js'
         }
       });
     });

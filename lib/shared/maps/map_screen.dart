@@ -110,22 +110,29 @@ class _MapScreenState extends State<MapScreen> {
   Future<List<LatLng>> getPolylinePoints() async {
     List<LatLng> polylineCoordinates = [];
     PolylinePoints polylinePoints = PolylinePoints();
-    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      AppConfig.mapKey, // GMAP API KEY
-      PointLatLng(curLocation.latitude, curLocation.longitude),
-      PointLatLng(destLocation.latitude, destLocation.longitude),
-      travelMode: TravelMode.driving,
+
+    // Create a PolylineRequest object
+    PolylineRequest request = PolylineRequest(
+      origin: PointLatLng(curLocation.latitude, curLocation.longitude),
+      destination: PointLatLng(destLocation.latitude, destLocation.longitude),
+      mode: TravelMode.driving, // Set travel mode
     );
+
+    // Call the updated method with named parameter 'request'
+    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+      request: request,
+    );
+
     if (result.points.isNotEmpty) {
       for (var point in result.points) {
         polylineCoordinates.add(LatLng(point.latitude, point.longitude));
       }
     } else {
-      // ignore: avoid_print
       print(result.errorMessage);
     }
     return polylineCoordinates;
   }
+
 
   void generatePolyLineFromPoints(List<LatLng> polylineCoordinates) async {
     PolylineId id = const PolylineId("poly");

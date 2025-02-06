@@ -200,7 +200,7 @@ class OTPScreen extends HookConsumerWidget {
                 padding: EdgeInsets.symmetric(vertical: 40),
                 child: Column(
                   children: <Widget>[
-                    Text("app Management System", style: AppText.heading1),
+                    Text("App Management System", style: AppText.heading1),
                     Text("Driver App", style: AppText.bodyText),
                   ],
                 ),
