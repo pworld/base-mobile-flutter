@@ -5,9 +5,8 @@ A Flutter project demonstrating a modular architecture for authentication. This 
 ## Table of Contents
 
 - [Overview](#overview)
-- [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
-- [Available Scripts](#available-scripts)
+- [Installation](#Installation)
 - [Notes](#notes)
 
 ## Overview
@@ -16,7 +15,7 @@ This project implements a modular architecture where each feature is isolated in
 - **data:** Contains models, data sources, and repositories.
 - **domain:** Contains business logic, use cases, and domain entities.
 - **presentation:** Contains UI components:
-  - **provider:** State management logic (e.g., using Provider, Riverpod, etc.)
+  - **provider:** State management logic (e.g., using Provider, Riverbed, etc.)
   - **screen:** Widgets and screen layouts.
   - **state:** Contains state definitions or related utilities.
 
@@ -32,7 +31,9 @@ This project implements a modular architecture where each feature is isolated in
 ### Installation
 
 1. **Clone the Repository**
-
+    ```bash
+    git clone https://github.com/pworld/base-mobile-flutter
+    ```
 
 2. **Install Dependencies**
 
@@ -41,5 +42,22 @@ Run the following command in your project root:
    ```bash
     flutter pub get
     flutter run
+  ```
 
-    ```
+### Notes
+
+**Base Flutter coverage**:
+
+- Login with Phone number or email
+- OTP verification
+- Base List
+- Base use Maps in Flutter
+- Simple Settings and Logout
+  - Base Color can be change from root_app.dart:
+       ```bash
+        theme: FlexThemeData.light(scheme: FlexScheme.flutterDash, fontFamily: 'Poppins'),
+        darkTheme: FlexThemeData.dark(scheme: FlexScheme.flutterDash, fontFamily: 'Poppins'),
+        themeMode: ThemeMode.light, // Use dark or light theme based on system setting.
+        ```
+
+This base need API, but overall the structures is easy to duplicate and uses
